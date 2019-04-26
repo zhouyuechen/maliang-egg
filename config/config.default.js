@@ -16,12 +16,23 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1556250302504_7337';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['auth'];
+
+  exports.multipart = {
+    mode: 'file',
+  };
+  config.view ={
+    mapping: {'.html': 'ejs'} //左边写成.html后缀，会自动渲染.html文件
+  };
 
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+
   };
+
+
+
 
   return {
     ...config,
